@@ -67,6 +67,16 @@ func schema_pkg_apis_cache_v1alpha1_MemcachedSpec(ref common.ReferenceCallback) 
 			SchemaProps: spec.SchemaProps{
 				Description: "MemcachedSpec defines the desired state of Memcached",
 				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"size": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Size is the size of the memcached deployment",
+							Type:        []string{"integer"},
+							Format:      "int32",
+						},
+					},
+				},
+				Required: []string{"size"},
 			},
 		},
 	}
@@ -78,6 +88,23 @@ func schema_pkg_apis_cache_v1alpha1_MemcachedStatus(ref common.ReferenceCallback
 			SchemaProps: spec.SchemaProps{
 				Description: "MemcachedStatus defines the observed state of Memcached",
 				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"nodes": {
+						SchemaProps: spec.SchemaProps{
+							Description: "Nodes are the names of the memcached pods",
+							Type:        []string{"array"},
+							Items: &spec.SchemaOrArray{
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Type:   []string{"string"},
+										Format: "",
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"nodes"},
 			},
 		},
 	}

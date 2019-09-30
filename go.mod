@@ -2,12 +2,13 @@ module github.com/emiyalee/memcached-operator
 
 require (
 	github.com/coreos/prometheus-operator v0.31.1 // indirect
+	github.com/go-openapi/spec v0.17.2
 	github.com/operator-framework/operator-sdk v0.10.1-0.20190929220126-5889b502a6a9
 	github.com/spf13/pflag v1.0.3
 	k8s.io/api v0.0.0-20190918155943-95b840bb6a1f
 	k8s.io/apimachinery v0.0.0-20190913080033-27d36303b655
 	k8s.io/client-go v11.0.1-0.20190409021438-1a26190bd76a+incompatible
-	k8s.io/kube-openapi v0.0.0-20190603182131-db7b694dc208 // indirect
+	k8s.io/kube-openapi v0.0.0-20190603182131-db7b694dc208
 	sigs.k8s.io/controller-runtime v0.2.0
 )
 
